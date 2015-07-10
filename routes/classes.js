@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
             console.log(err);
             res.send(err);
         } else {
-            res.render('index', { "classes": classes });
+            res.render('classes/index', { "classes": classes });
         }
     }, 3);
 });
