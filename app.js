@@ -68,12 +68,22 @@ app.use(expressValidator({
 // connect-flash
 app.use(flash());
 
-// express-messages
+// Glbal vars
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
   
   if(req.url == '/') {
     res.locals.isHome = true;
+  }
+  next();
+});
+
+// Makes the user object global in all views
+app.get('*', function(req, res, next) {
+  // put user into res.locals for easy access from templates
+  res.locals.user = req.user || null;
+  if(req.user){
+    res.locals.type = req.user.type;
   }
   next();
 });
