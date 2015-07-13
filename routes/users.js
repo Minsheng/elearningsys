@@ -105,7 +105,8 @@ passport.deserializeUser(function(id, done) {
 router.post('/login', passport.authenticate('local', {failureRedirect:'/', 
     failureFlash:'Wrong Username or Password'}), function(req, res){
     req.flash('success', 'You are now logged in');
-    res.redirect('/');
+    var usertype = req.user.type;
+	res.redirect('/'+usertype+'s/classes');
 });
 
 passport.use(new localStrategy(
