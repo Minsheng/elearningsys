@@ -1,4 +1,4 @@
-# elearningsys
+# SimpleLearn
 A StackSkills NodeJS project - elearning system
 - Custom User System
 - Student & Instructor Login

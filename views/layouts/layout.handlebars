@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>eLearn</title>
+<title>SimpleLearn</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="" />
@@ -13,7 +13,7 @@
 
 <!-- Menu Horizontal -->
 <ul class="menu">
-<li class="current"><a href="/">Home</a></li>
+<li><a href="/">Home</a></li>
 <li><a href="/classes">Classes</a></li>
 </ul>
 
@@ -22,7 +22,7 @@
 <!-- ===================================== END HEADER ===================================== -->
 	 
 <div class="col_12">
-	<div class="col_9">
+	<div class="col_8">
 		{{{messages}}}
 		{{#if errors}}
 			{{#each errors}}
@@ -33,15 +33,14 @@
 				</div>
 			{{/each}}
 		{{/if}}
-	{{{body}}}
+		{{{body}}}
 	</div>
 	
-	<div class="col_3">
-	{{>login}}
+	<div class="col_4 login">
+		{{>login}}
 	</div>
 	
 	<hr />
-	
 	{{#if isHome}}
 		{{>classes}}
 	{{/if}}

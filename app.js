@@ -12,7 +12,7 @@ var passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/elearningsys');
+mongoose.connect('mongodb://elearningadmin:mongo123@ds031193.mongolab.com:31193/elearningsys');
 var db = mongoose.connection;
 async = require('async');
 
@@ -31,7 +31,7 @@ app.set('view engine', 'handlebars');
 
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
